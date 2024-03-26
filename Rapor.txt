@@ -1,0 +1,23 @@
+1. Veritabanı Modellemesi:
+   - `Airline` ve `Aircraft` modellerini tanımladım.
+
+2. Serializerlar:
+   - `AirlineSerializer` ve `AircraftSerializer` sınıflarını oluşturdum.
+
+3. Views:
+   - RESTful API işlevselliği için gerekli olan view fonksiyonlarını yazdım.
+   - `create_airline`, `update_airline`, `retrieve_airline`, `list_airlines`, `create_aircraft`, `update_aircraft`, `retrieve_aircraft`, `delete_aircraft`, ve `delete_airline` gibi view fonksiyonlarını oluşturdum.
+
+4. Token Authentication:
+   - Kullanıcı kimlik doğrulama ve token oluşturma işlemleri için gerekli view ve serializer'ları yazdım.
+   - `TokenObtainPairView` ve `TokenRefreshView`'ı kullandım.
+
+5. URL Yapılandırması:
+   - API endpoint'lerini tanımlamak için `urls.py` dosyasını ayarladım.
+   - Airline ve Aircraft işlemleri için uygun URL'leri tanımladım.
+
+6. Postman Testi:
+   - Tüm Post , Get , Patch metodlarını Postman üzerinde test ettim.
+
+Not: Postman Collection üzerinde url oynamaları yaptım ayrıca jwt auth için Obtain Authentication Token Post metodundaki username ve password kısmnını da değiştirdim
+Not: Test ederken benim paylaştığım Postman Collection'ı kullanabilirsiniz sadece bahsettiğim şeyleri değiştirdim
