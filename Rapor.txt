@@ -1,23 +1,35 @@
 1. Veritabanı Modellemesi:
-   - `Airline` ve `Aircraft` modellerini tanımladım.
+   - Proje, iki ana model olan `Airline` ve `Aircraft` üzerine odaklanır. `Airline` modeli, bir havayolu şirketini temsil ederken, `Aircraft` modeli uçakları tanımlar. Her iki model de 
+     `models.py` dosyasında tanımlanmıştır. `Airline` modeli şirketin adı, çağrı işareti, kuruluş yılı ve ana havalimanı gibi bilgileri içerirken, `Aircraft` modeli üretici seri numarası, tip, 
+     model, işleten havayolu ve motor sayısı gibi bilgileri içerir.
 
 2. Serializerlar:
-   - `AirlineSerializer` ve `AircraftSerializer` sınıflarını oluşturdum.
+   - `AirlineSerializer` ve `AircraftSerializer` sınıfları, ilgili model verilerini JSON formatına dönüştürmek için kullanılır. Bu serializerlar, `serializers.py` dosyasında tanımlanmıştır. 
+     Serializerlar, REST API'nin veri alışverişini kolaylaştırır ve model verilerini JSON formatına dönüştürerek istemcilere iletilmesini sağlar.
 
 3. Views:
-   - RESTful API işlevselliği için gerekli olan view fonksiyonlarını yazdım.
-   - `create_airline`, `update_airline`, `retrieve_airline`, `list_airlines`, `create_aircraft`, `update_aircraft`, `retrieve_aircraft`, `delete_aircraft`, ve `delete_airline` gibi view fonksiyonlarını oluşturdum.
+   - Proje, RESTful API işlevselliğini sağlamak için gerekli olan view fonksiyonlarını içerir. `views.py` dosyasında, havayolu ve uçak işlemleri için farklı view fonksiyonları tanımlanmıştır. 
+     Bu fonksiyonlar, HTTP isteklerini işler ve ilgili model verilerini döndürür. Örneğin, `create_airline` fonksiyonu yeni bir havayolu şirketi oluştururken, `retrieve_aircraft` fonksiyonu 
+     belirli bir uçağın detaylarını getirir.
 
 4. Token Authentication:
-   - Kullanıcı kimlik doğrulama ve token oluşturma işlemleri için gerekli view ve serializer'ları yazdım.
-   - `TokenObtainPairView` ve `TokenRefreshView`'ı kullandım.
+   - Kullanıcı kimlik doğrulama ve token oluşturma işlemleri için gerekli view ve serializer'lar mevcuttur. Django REST Framework ve Simple JWT kütüphaneleri kullanılarak token tabanlı kimlik 
+     doğrulama sağlanır. Bu, API'nin güvenliğini artırır ve yetkilendirme işlemlerini yönetir.
 
 5. URL Yapılandırması:
-   - API endpoint'lerini tanımlamak için `urls.py` dosyasını ayarladım.
-   - Airline ve Aircraft işlemleri için uygun URL'leri tanımladım.
+   - API endpoint'lerini tanımlamak için `urls.py` dosyası yapılandırılmıştır. Havayolu ve uçak işlemleri için uygun URL'ler belirlenmiş ve ilgili view fonksiyonlarına yönlendirilmiştir.
 
 6. Postman Testi:
-   - Tüm Post , Get , Patch metodlarını Postman üzerinde test ettim.
+   - Tüm Post, Get, Patch metodları Postman üzerinde test edilmiştir. Bu testler, API'nin istenilen şekilde çalıştığını doğrular ve işlevselliğin doğruluğunu sağlar. Ayrıca, kullanıcı kimlik 
+     doğrulama işlemleri de Postman üzerinde test edilmiştir.
 
-Not: Postman Collection üzerinde url oynamaları yaptım ayrıca jwt auth için Obtain Authentication Token Post metodundaki username ve password kısmnını da değiştirdim
-Not: Test ederken benim paylaştığım Postman Collection'ı kullanabilirsiniz sadece bahsettiğim şeyleri değiştirdim
+Bu rapor, proje geliştirme sürecinde gerçekleştirilen adımları ve kullanılan teknolojileri ayrıntılı bir şekilde açıklar. Proje, bir RESTful API'nin temellerini oluşturarak, havayolu ve uçak verilerinin etkili bir şekilde yönetilmesini sağlar.
+
+Tabii, işte notların daha düzgün bir şekilde yazılmış hali:
+
+Not 1:Postman Collection üzerinde URL'lerle oynamalar yapıldı. Ayrıca, JWT kimlik doğrulama için Obtain Authentication Token Post metodu içerisindeki kullanıcı adı ve şifre kısımları 
+     değiştirildi.
+  
+Not 2:Testler sırasında kullanılan Postman Collection, yapılan değişiklikler dikkate alınarak düzenlendi. Sadece belirtilen değişiklikler yapıldı ve test süreci bu şekilde gerçekleştirildi.
+
+Not 3:Benim Paylaştığım Airline REST API.postman_collection.json dosyasıyla tüm methodları daha rahat bir şekilde test edebilirsiniz.

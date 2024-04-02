@@ -21,11 +21,10 @@ class CustomTokenObtainPairView(TokenObtainPairView):
 
 @api_view(['POST'])
 def obtain_auth_token(request):
-    # Kullanıcı adı ve parola isteğinden ilgili verileri alın
+
     username = request.data.get('username')
     password = request.data.get('password')
 
-    # Kullanıcı adı ve parola doğrulanırsa, bir token oluşturun
     user = authenticate(username=username, password=password)
     if user:
         token, _ = Token.objects.get_or_create(user=user)

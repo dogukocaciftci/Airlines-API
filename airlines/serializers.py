@@ -15,9 +15,6 @@ class AircraftSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-# Özel Token Alma Serializer
-
-
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
-    # İsteğe bağlı olarak, kullanıcıdan farklı alanlar almak için serializer'ı özelleştirebilirsiniz
+
     pass
